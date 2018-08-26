@@ -1,6 +1,6 @@
 import Testistic from 'testistic-model'
 
-import TestisticClient from '../index.js'
+import TestisticClient from '../../index.js'
 
 import { assert } from 'chai'
 
