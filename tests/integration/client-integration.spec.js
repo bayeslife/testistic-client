@@ -13,7 +13,7 @@ describe('Given a TestRun', function () {
             r = await client.createTestRun(testrun)
         })
         it('Then there is a test run registered', async function () {
-            assert(r)
+            assert(r, 'Unable to create Test Run')
         })
     })
 })
