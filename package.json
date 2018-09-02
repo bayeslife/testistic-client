@@ -47,6 +47,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "testistic-model": "^1.0.5"
+    "testistic-model": "^1.0.6"
   }
 }
