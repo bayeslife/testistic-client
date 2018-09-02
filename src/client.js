@@ -10,7 +10,7 @@ export default function () {
       })
     return {
         createTestRun: async function (testrun) {
-            debug('CreateTestRun')
+            debug(`Submit TestRun ${JSON.stringify(testrun)}`)
             try {
                 var response = await api.post('/testruns', testrun)
                 var testrundata = response.data
