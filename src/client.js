@@ -5,7 +5,7 @@ const debug = Debug('testistic-client')
 var Axios = require('axios')
 
 var options = {
-    apiEndpoint: process.env.API_URL || 'http://localhost:8081'
+    apiEndpoint: process.env.TESTISTIC_API_URL || 'http://localhost:8081'
 }
 
 export default function () {
