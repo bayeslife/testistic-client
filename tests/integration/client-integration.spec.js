@@ -5,6 +5,7 @@ import TestisticClient from '../../index.js'
 import { assert } from 'chai'
 
 describe('Given a TestRun', function () {
+  this.timeout(30000)
     var client = TestisticClient()
     var testrun = Testistic.TestRun.createFromTemplate()
     describe('When it is submitted', function () {

@@ -1,6 +1,6 @@
 {
   "name": "testistic-client",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Phil <phil@xceptionale.com>",
   "license": "MIT",
   "description": "Testistic Client functionality",
@@ -47,6 +47,7 @@
     "testistic-model": "^1.0.7"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "valid-url": "^1.0.9"
   }
 }

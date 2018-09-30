@@ -1,5 +1,9 @@
 import Debug from 'debug'
 
+import ValidUrl from 'valid-url'
+
+import assert from 'assert'
+
 const debug = Debug('testistic-client')
 
 var Axios = require('axios')
@@ -8,7 +12,11 @@ var options = {
     apiEndpoint: process.env.TESTISTIC_API_URL || 'http://localhost:8081'
 }
 
-export default function () {
+export default function (clientoptions) {
+    options = Object.assign(options, clientoptions)
+
+    assert(ValidUrl.isWebUri(options.apiEndpoint),`Testistic API Endpoint is not valid => ${options.apiEndpoint}`)
+
     var api = Axios.create({
         baseURL: options.apiEndpoint
       })
