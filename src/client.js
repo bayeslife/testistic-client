@@ -15,7 +15,7 @@ var options = {
 export default function (clientoptions) {
     options = Object.assign(options, clientoptions)
 
-    assert(ValidUrl.isWebUri(options.apiEndpoint),`Testistic API Endpoint is not valid => ${options.apiEndpoint}`)
+    assert(ValidUrl.isWebUri(options.apiEndpoint), `Testistic API Endpoint is not valid => ${options.apiEndpoint}`)
 
     var api = Axios.create({
         baseURL: options.apiEndpoint
