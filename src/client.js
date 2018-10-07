@@ -24,9 +24,26 @@ export default function (clientoptions) {
         createTestRun: async function (testrun) {
             debug(`Submit TestRun ${JSON.stringify(testrun)}`)
             try {
-                var response = await api.post('/testruns', testrun)
+                var response = await api.post('/testrun', testrun)
                 var testrundata = response.data
                 debug('TestRun created', testrundata)
+                return testrundata
+            } catch (error) {
+                if (error.response) {
+                    debug(`Unable to CreateTestRun HTTP Status is ${error.response.status} URL was ${error.config.url}`)
+                } else if (error.code) {
+                    debug('Unable to CreateTestRun Code:', error.code, error.config.url)
+                } else {
+                    debug('Unable to CreateTestRun', error)
+                }
+            }
+        },
+        createTestRuns: async function (testruns) {
+            debug(`Submit TestRuns ${JSON.stringify(testruns)}`)
+            try {
+                var response = await api.post('/testruns', testruns)
+                var testrundata = response.data
+                debug('TestRuns created', testrundata)
                 return testrundata
             } catch (error) {
                 if (error.response) {

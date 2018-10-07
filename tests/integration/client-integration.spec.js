@@ -4,17 +4,31 @@ import TestisticClient from '../../index.js'
 
 import { assert } from 'chai'
 
-describe('Given a TestRun', function () {
+describe('Given a TestisticClient', function () {
   this.timeout(30000)
     var client = TestisticClient()
-    var testrun = Testistic.TestRun.createFromTemplate()
-    describe('When it is submitted', function () {
+    
+    describe('When a TestRun is reported', function () {
+        var testrun
         var r
         before(async () => {
+            testrun = Testistic.TestRun.createFromTemplate()
             r = await client.createTestRun(testrun)
         })
         it('Then there is a test run registered', async function () {
             assert(r, 'Unable to create Test Run')
+        })
+    })
+    describe('When TestRuns are reported', function () {
+        var testruns
+        var r
+        before(async () => {
+            var testrun1 = Testistic.TestRun.createFromTemplate()
+            var testrun2 = Testistic.TestRun.createFromTemplate()
+            r = await client.createTestRuns([ testrun1, testrun2 ])
+        })
+        it('Then test runs are registered', async function () {
+            assert(r, 'Unable to create TestRuns')
         })
     })
 })

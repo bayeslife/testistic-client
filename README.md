@@ -20,3 +20,7 @@ var client = TestisticClient()
 var testrun = Testistic.TestRun.createFromTemplate()
 await client.createTestRun(testrun)
 ```
+
+## Release
+
+[Release Notes](./RELEASE.md)
