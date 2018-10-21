@@ -24,7 +24,9 @@ describe('Given a TestisticClient', function () {
         var r
         before(async () => {
             var testrun1 = Testistic.TestRun.createFromTemplate()
+            testrun1.epic='epic1'
             var testrun2 = Testistic.TestRun.createFromTemplate()
+            testrun2.epic='epic2'
             r = await client.createTestRuns([ testrun1, testrun2 ])
         })
         it('Then test runs are registered', async function () {
